@@ -60,7 +60,7 @@ The platform provides an engaging user experience through visually appealing lay
 ### 🏠 Home Page
 
 ![Home Page](./public/assets/Screenshots/1.png),
-![Home Page Translate](./public/assets/Screenshots/10.png)
+![Home Page](./public/assets/Screenshots/10.png)
 
 ### 🧭 Trips Page
 
