@@ -1,0 +1,679 @@
+<section
+    class="relative min-h-[80vh] flex flex-col justify-between pt-32 pb-16 px-6 lg:px-8 overflow-hidden bg-[#071D2B]">
+
+    <!-- Background Image with Gradient -->
+    <div class="absolute inset-0 z-0">
+        <img src="/assets/images/Homehero.webp" alt="Hero Background" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#071D2B]/70 via-[#071D2B]/30 to-transparent"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="mx-auto max-w-7xl w-full relative z-10 my-auto">
+        <div class="max-w-2xl">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="text-white text-lg font-medium">{{ 'HOME.Next_Adventure' | translate }}</span>
+                <span class="text-[#FFAA2B] text-xl">☀️</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none mb-6">
+                {{ 'HOME.HERO_TITLE' | translate }}
+            </h1>
+            <p class="text-sm sm:text-base text-slate-200 font-medium leading-relaxed mb-8 max-w-lg">
+                {{ 'HOME.HERO_SUBTITLE' | translate }}
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="/trips"
+                    class="inline-flex items-center gap-2.5 rounded-full bg-[#FFAA2B] px-8 py-3.5 text-sm font-bold text-[#071D2B] shadow-xl hover:bg-[#ffb943] transition">
+                    <span>{{ 'HOME.EXPLORE_BTN' | translate }}</span>
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+                <a href="/connect"
+                    class="inline-flex items-center gap-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition">
+                    <span>{{ 'HOME.CONTACT_BTN' | translate }}</span>
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Search Bar (Floating Card) -->
+    <div class="mx-auto max-w-4xl w-full relative z-10 mt-12">
+        <div
+            class="bg-[#eeeedd] rounded-2xl shadow-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-100">
+    
+            <div class="flex items-center gap-3 px-4 w-full md:w-auto">
+                <div class="text-[#19B8D1]">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span class="text-sm font-bold text-slate-800">{{ 'HOME.WHERE_TO' | translate }}</span>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full md:w-auto flex-1">
+    
+                <div class="bg-[#eeeedd] border border-slate-400 rounded-xl px-4 py-2.5 flex flex-col">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{{ 'HOME.DESTINATION' | translate }}</span>
+                    <select #destSelect class="bg-transparent text-sm font-bold text-slate-800 outline-none cursor-pointer">
+                        <option value="dahab">{{ 'HOME.DAHAB' | translate }}</option>
+                        <option value="alexandria">{{ 'HOME.ALEXANDRIA' | translate }}</option>
+                        <option value="fayoum">{{ 'HOME.FAYOUM' | translate }}</option>
+                        <option value="portsaid">{{ 'HOME.PORTSAID' | translate }}</option>
+                    </select>
+                </div>
+    
+                <!-- Trip Type Select -->
+                <div class="bg-[#eeeedd] border border-slate-400 rounded-xl px-4 py-2.5 flex flex-col">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{{ 'HOME.TRIP_TYPE' | translate }}</span>
+                    <select class="bg-transparent text-sm font-bold text-slate-800 outline-none cursor-pointer">
+                        <option value="every_week">{{ 'HOME.EVERY_WEEK' | translate }}</option>
+                    </select>
+                </div>
+            </div>
+    
+            <button (click)="onExplore(destSelect.value)"
+                class="w-full md:w-auto bg-[#FFAA2B] hover:bg-[#ffb943] text-[#071D2B] font-bold px-8 py-4 rounded-xl text-sm shadow-md transition flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+                <span>{{ 'HOME.EXPLORE_TRIP_BTN' | translate }}</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+    
+        </div>
+    </div>
+    <div
+        class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#def8ff] pointer-events-none z-20">
+    </div>
+
+</section>
+
+<section class="py-20 px-6 lg:px-8 bg-[#def8ff]">
+    <div class="mx-auto max-w-7xl">
+
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">{{ 'HOME.POPULAR_TRIPS' | translate }}</span>
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight">
+                    {{ 'HOME.POPULAR_TITLE' | translate }}
+                </h2>
+                <p class="text-sm text-slate-500 font-medium mt-1">
+                    {{ 'HOME.POPULAR_SUBTITLE' | translate }}
+                </p>
+            </div>
+            <a href="/trips"
+                class="hidden md:inline-flex items-center gap-1 text-sm font-bold text-[#19B8D1] hover:text-[#071D2B] transition mt-4 md:mt-0">
+                <span>{{ 'HOME.VIEW_ALL' | translate }}</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Trips Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Trip Card 1: Dahab -->
+            <div
+                class="group relative rounded-3xl overflow-hidden shadow-lg bg-white border border-slate-100 flex flex-col justify-between h-[420px]">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Dahabhero.png" alt="Dahab"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/40 to-transparent"></div>
+                </div>
+
+                <!-- Top Badge -->
+                <div class="relative z-10 p-5">
+                    <span
+                        class="inline-block bg-[#19B8D1]/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        {{ 'HOME.WEEKLY_TRIP' | translate }}
+                    </span>
+                </div>
+
+                <!-- Bottom Content -->
+                <div class="relative z-10 p-6 text-white">
+                    <h3 class="text-3xl font-black mb-2 italic">{{ 'HOME.DAHAB' | translate }}</h3>
+                    <div class="flex items-center gap-3 text-xs text-slate-200 font-medium mb-4">
+                        <span>🏖️ {{ 'HOME.BEACH' | translate }}</span>
+                        <span>•</span>
+                        <span>🧗 {{ 'HOME.ADVENTURE' | translate }}</span>
+                        <span>•</span>
+                        <span>🧘 {{ 'HOME.RELAXATION' | translate }}</span>
+                    </div>
+                    <a href="/details/dahab"
+                        class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-[#FFAA2B] transition">
+                        <span>{{ 'HOME.EXPLORE_TRIP_BTN' | translate }}</span>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trip Card 2: Alexandria -->
+            <div
+                class="group relative rounded-3xl overflow-hidden shadow-lg bg-white border border-slate-100 flex flex-col justify-between h-[420px]">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Alexandria_beach_Med.5d1221d28cc3b-1080x720.webp" alt="Alexandria"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/40 to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 p-5">
+                    <span
+                        class="inline-block bg-[#19B8D1]/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        {{ 'HOME.WEEKLY_TRIP' | translate }}
+                    </span>
+                </div>
+
+                <div class="relative z-10 p-6 text-white">
+                    <h3 class="text-3xl font-black mb-2 italic">{{ 'HOME.ALEXANDRIA' | translate }}</h3>
+                    <div class="flex items-center gap-3 text-xs text-slate-200 font-medium mb-4">
+                        <span>🏛️ {{ 'HOME.SEA' | translate }}</span>
+                        <span>•</span>
+                        <span>📜 {{ 'HOME.HISTORY' | translate }}</span>
+                        <span>•</span>
+                        <span>🍲 {{ 'HOME.FOOD' | translate }}</span>
+                    </div>
+                    <a href="/details/alexandria"
+                        class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-[#FFAA2B] transition">
+                        <span>{{ 'HOME.EXPLORE_TRIP_BTN' | translate }}</span>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trip Card 3: Fayoum -->
+            <div
+                class="group relative rounded-3xl overflow-hidden shadow-lg bg-white border border-slate-100 flex flex-col justify-between h-[420px]">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Fayom3.jpg" alt="Fayoum"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/40 to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 p-5">
+                    <span
+                        class="inline-block bg-[#19B8D1]/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        {{ 'HOME.WEEKLY_TRIP' | translate }}
+                    </span>
+                </div>
+
+                <div class="relative z-10 p-6 text-white">
+                    <h3 class="text-3xl font-black mb-2 italic">{{ 'HOME.FAYOUM' | translate }}</h3>
+                    <div class="flex items-center gap-3 text-xs text-slate-200 font-medium mb-4">
+                        <span>🌿 {{ 'HOME.NATURE' | translate }}</span>
+                        <span>•</span>
+                        <span>🚙 {{ 'HOME.SAFARI' | translate }}</span>
+                        <span>•</span>
+                        <span>⛺ {{ 'HOME.CAMPING' | translate }}</span>
+                    </div>
+                    <a href="/details/fayoum"
+                        class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-[#FFAA2B] transition">
+                        <span>{{ 'HOME.EXPLORE_TRIP_BTN' | translate }}</span>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-20 px-6 lg:px-8 bg-[#def8ff]">
+    <div class="mx-auto max-w-7xl text-center">
+
+        <div class="inline-flex items-center gap-3 mb-2">
+            <span class="h-px w-8 bg-[#19B8D1]"></span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">Why Ĥ&Ĥ?</span>
+            <span class="h-px w-8 bg-[#19B8D1]"></span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight mb-3">
+            {{ 'HOME.WHY_TITLE' | translate }}
+        </h2>
+        <p class="text-sm text-slate-500 font-medium mb-16">
+            {{ 'HOME.WHY_SUBTITLE' | translate }}
+        </p>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Feature 1 -->
+            <div
+                class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <div class="h-16 w-16 rounded-2xl bg-[#19B8D1]/10 text-[#19B8D1] flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#071D2B] mb-2">{{ 'HOME.WHY_1_TITLE' | translate }}</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                    {{ 'HOME.WHY_1_DESC' | translate }}
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+                class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <div class="h-16 w-16 rounded-2xl bg-[#19B8D1]/10 text-[#19B8D1] flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#071D2B] mb-2">{{ 'HOME.WHY_2_TITLE' | translate }}</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                    {{ 'HOME.WHY_2_DESC' | translate }}
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+                class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <div class="h-16 w-16 rounded-2xl bg-[#19B8D1]/10 text-[#19B8D1] flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#071D2B] mb-2">{{ 'HOME.WHY_3_TITLE' | translate }}</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                    {{ 'HOME.WHY_3_DESC' | translate }}
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+                class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <div class="h-16 w-16 rounded-2xl bg-[#19B8D1]/10 text-[#19B8D1] flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#071D2B] mb-2">{{ 'HOME.WHY_3_DESC' | translate }}</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                    {{ 'HOME.WHY_4_DESC' | translate }}
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-20 px-6 lg:px-8 bg-[#def8ff] overflow-hidden">
+    <div class="mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left Content -->
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">{{'HOME.EXPERIENCE' | translate}} Ĥ&Ĥ</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight mb-4">
+                    {{ 'HOME.MORE_THAN_TITLE' | translate }}
+                </h2>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+                    {{ 'HOME.MORE_THAN_DESC' | translate }}
+                </p>
+
+                <!-- Checkpoints -->
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center gap-3 text-sm font-bold text-[#071D2B]">
+                        <span
+                            class="h-5 w-5 rounded-full bg-[#19B8D1]/20 text-[#19B8D1] flex items-center justify-center text-xs">✓</span>
+                        <span>{{ 'HOME.CHECK_1' | translate }}</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-[#071D2B]">
+                        <span
+                            class="h-5 w-5 rounded-full bg-[#19B8D1]/20 text-[#19B8D1] flex items-center justify-center text-xs">✓</span>
+                        <span>{{ 'HOME.CHECK_2' | translate }}</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-[#071D2B]">
+                        <span
+                            class="h-5 w-5 rounded-full bg-[#19B8D1]/20 text-[#19B8D1] flex items-center justify-center text-xs">✓</span>
+                        <span>{{ 'HOME.CHECK_3' | translate }}</span>
+                    </div>
+                </div>
+
+                <a routerLink="/about"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-[#19B8D1] hover:text-[#071D2B] transition group">
+                    <span>{{ 'HOME.OUR_STORY_BTN' | translate }}</span>
+                    <svg class="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Right Visual Gallery Cards (Original sizes + Smooth Animations) -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-lg h-[350px]">
+
+                    <!-- Top Right Image -->
+                    <div
+                        class="absolute top-0 right-0 w-3/4 h-48 rounded-2xl overflow-hidden shadow-xl border-4 border-white rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 group">
+                        <img src="/assets/images/gg1.webp" alt="Travelers"
+                            class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+
+                    <!-- Bottom Left Image -->
+                    <div
+                        class="absolute bottom-0 left-0 w-3/4 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 group">
+                        <img src="/assets/images/gg2.webp" alt="Landscape"
+                            class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+
+                    <!-- Small Overlay Card -->
+                    <div
+                        class="absolute bottom-10 right-10 w-36 h-28 rounded-xl overflow-hidden shadow-lg border-4 border-white rotate-6 hover:rotate-0 hover:scale-110 transition-all duration-500 z-30 group">
+                        <img src="/assets/images/gg3.webp" alt="Jeep Safari"
+                            class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-6 lg:px-8 bg-[#def8ff]">
+    <div class="mx-auto max-w-7xl">
+
+        <!-- Section Header with Discover All on the right -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+            <div>
+                <div class="inline-flex items-center gap-3 mb-2">
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">{{ 'HOME.COMING_SOON' | translate }}</span>
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight mb-2">
+                    {{ 'HOME.COMING_TITLE' | translate }}
+                </h2>
+                <p class="text-sm text-slate-500 font-medium">
+                    {{'HOME.COMING_SUBTITLE' | translate }}
+                </p>
+            </div>
+
+            <a routerLink="/trips"
+                class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-[#19B8D1]/30 bg-white/80 hover:bg-[#19B8D1] text-[#071D2B] hover:text-white text-sm font-bold shadow-sm hover:shadow-md transition-all duration-300 group">
+                <span>{{ 'HOME.COMING_BTN' | translate }}</span>
+                <svg class="h-4 w-4 text-[#19B8D1] group-hover:text-white transform group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- 4 Wide Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Siwa -->
+            <div
+                class="group relative rounded-3xl overflow-hidden h-60 shadow-lg bg-slate-900 flex flex-col justify-end p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Siwa.webp" alt="Siwa"
+                        class="h-full w-full object-cover opacity-80 group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/30 to-transparent"></div>
+                </div>
+                <div class="relative z-10 text-center">
+                    <h3 class="text-white font-black text-xl mb-3 italic">{{ 'HOME.SIWA' | translate }}</h3>
+                    <span
+                        class="inline-block bg-[#071D2B]/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-1.5 rounded-full border border-white/15 tracking-wider">
+                        {{ 'HOME.COMING_SOON' | translate }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Saint Catherine -->
+            <div
+                class="group relative rounded-3xl overflow-hidden h-60 shadow-lg bg-slate-900 flex flex-col justify-end p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/SantKat.webp" alt="Saint Catherine"
+                        class="h-full w-full object-cover opacity-80 group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/30 to-transparent"></div>
+                </div>
+                <div class="relative z-10 text-center">
+                    <h3 class="text-white font-black text-xl mb-3 italic">{{ 'HOME.SAINT_CATHERINE' | translate }}</h3>
+                    <span
+                        class="inline-block bg-[#071D2B]/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-1.5 rounded-full border border-white/15 tracking-wider">
+                        {{ 'HOME.COMING_SOON' | translate }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- ASWAN -->
+            <div
+                class="group relative rounded-3xl overflow-hidden h-60 shadow-lg bg-slate-900 flex flex-col justify-end p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Aswan.webp" alt="Aswan"
+                        class="h-full w-full object-cover opacity-80 group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/30 to-transparent"></div>
+                </div>
+                <div class="relative z-10 text-center">
+                    <h3 class="text-white font-black text-xl mb-3 italic">{{ 'HOME.ASWAN' | translate }}</h3>
+                    <span
+                        class="inline-block bg-[#071D2B]/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-1.5 rounded-full border border-white/15 tracking-wider">
+                        {{ 'HOME.COMING_SOON' | translate }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Luxor -->
+            <div
+                class="group relative rounded-3xl overflow-hidden h-60 shadow-lg bg-slate-900 flex flex-col justify-end p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="/assets/images/Luxor.webp" alt="Luxor"
+                        class="h-full w-full object-cover opacity-80 group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#071D2B] via-[#071D2B]/30 to-transparent"></div>
+                </div>
+                <div class="relative z-10 text-center">
+                    <h3 class="text-white font-black text-xl mb-3 italic">{{ 'HOME.LUXOR' | translate }}</h3>
+                    <span
+                        class="inline-block bg-[#071D2B]/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-1.5 rounded-full border border-white/15 tracking-wider">
+                        {{ 'HOME.COMING_SOON' | translate }}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-16 px-6 lg:px-8 bg-[#def8ff]">
+    <div class="mx-auto max-w-7xl">
+
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <div class="inline-flex items-center gap-3 mb-2">
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">{{ 'HOME.GALLERY_LABEL' | translate }}</span>
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight mb-2">
+                    {{ 'HOME.MOMENTS_TITLE' | translate }}
+                </h2>
+                <p class="text-sm text-slate-500 font-medium">
+                    {{ 'HOME.MOMENTS_SUBTITLE' | translate }}
+                </p>
+            </div>
+
+            <a routerLink="/gallery"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#19B8D1]/30 bg-white/80 hover:bg-[#19B8D1] text-[#071D2B] hover:text-white text-sm font-bold shadow-sm hover:shadow-md transition-all duration-300 group mt-4 md:mt-0">
+                <span>{{ 'HOME.VIEW_GALLERY' | translate }}</span>
+                <svg class="h-4 w-4 text-[#19B8D1] group-hover:text-white transform group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Gallery Grid Layout (Compact & Short Heights) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+            <!-- Big Left Image (Shorter height) -->
+            <div class="group relative rounded-2xl overflow-hidden h-[240px] shadow-md">
+                <img src="/assets/images/vv1.webp" alt="Gallery Image 1"
+                    class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+
+            <!-- Middle Column (Two stacked compact images) -->
+            <div class="flex flex-col gap-5">
+                <div class="group relative rounded-2xl overflow-hidden h-[110px] shadow-md">
+                    <img src="/assets/images/vv2.webp" alt="Gallery Image 2"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden h-[110px] shadow-md">
+                    <img src="/assets/images/vv3.webp" alt="Gallery Image 3"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+                </div>
+            </div>
+
+            <!-- Big Right Image (Shorter height) -->
+            <div class="group relative rounded-2xl overflow-hidden h-[240px] shadow-md">
+                <img src="/assets/images/vv4.webp" alt="Gallery Image 4"
+                    class="h-full w-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="relative py-20 bg-cover bg-center bg-no-repeat text-white overflow-hidden"
+    style="background-image: url('assets/images/hero.png');">
+
+    <!-- Top Gradient Fade from #def8ff -->
+    <div
+        class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-t from-transparent to-[#def8ff] pointer-events-none z-20">
+    </div>
+
+    <!-- Dark Gradient Overlay matching the brand -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#071D2B]/30 via-[#0A2A3E]/20 to-[#071D2B]/10"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-[#19B8D1] mb-2">— {{ 'HOME.NUMBERS_LABEL' | translate }} —</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+                {{ 'HOME.NUMBERS_TITLE' | translate }}
+            </h2>
+        </div>
+
+        <!-- Stats Grid with vertical dividers -->
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+
+            <!-- Stat 1 -->
+            <div class="p-4 flex flex-col items-center justify-center group">
+                <div
+                    class="text-3xl md:text-5xl font-black text-[#19B8D1] mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {{ 'HOME.NUM_1_NUM' | translate }}
+                </div>
+                <div class="text-xs md:text-sm font-semibold text-slate-200 tracking-wider">
+                    {{ 'HOME.NUM_1_TEXT' | translate }}
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="p-4 flex flex-col items-center justify-center group pt-6 md:pt-4">
+                <div
+                    class="text-3xl md:text-5xl font-black text-[#19B8D1] mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {{ 'HOME.NUM_2_NUM' | translate }}
+                </div>
+                <div class="text-xs md:text-sm font-semibold text-slate-200 tracking-wider">
+                    {{ 'HOME.NUM_2_TEXT' | translate }}
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="p-4 flex flex-col items-center justify-center group pt-6 md:pt-4">
+                <div
+                    class="text-3xl md:text-5xl font-black text-[#19B8D1] mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {{ 'HOME.NUM_3_NUM' | translate }}
+                </div>
+                <div class="text-xs md:text-sm font-semibold text-slate-200 tracking-wider">
+                    {{ 'HOME.NUM_3_TEXT' | translate }}
+                </div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="p-4 flex flex-col items-center justify-center group pt-6 md:pt-4">
+                <div
+                    class="text-3xl md:text-5xl font-black text-[#19B8D1] mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {{ 'HOME.NUM_4_NUM' | translate }}
+                </div>
+                <div class="text-xs md:text-sm font-semibold text-slate-200 tracking-wider">
+                    {{ 'HOME.NUM_4_TEXT' | translate }}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Gradient Fade to #def8ff -->
+    <div
+        class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#def8ff] pointer-events-none z-20">
+    </div>
+</section>
+
+
+<section class="py-20 px-6 lg:px-8 bg-[#def8ff]">
+    <div class="mx-auto max-w-7xl">
+
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-2">
+            <div>
+                <div class="inline-flex items-center gap-3 mb-2">
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#19B8D1]">Testimonials</span>
+                    <span class="h-px w-8 bg-[#19B8D1]"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#071D2B] tracking-tight mb-2">
+                    {{ 'HOME.TRUSTED_TITLE' | translate }}
+                </h2>
+                <p class="text-sm text-slate-500 font-medium">
+                    {{ 'HOME.TRUSTED_SUBTITLE' | translate }}
+                </p>
+            </div>
+
+            <a routerLink="/about"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#19B8D1]/30 bg-white/80 hover:bg-[#19B8D1] text-[#071D2B] hover:text-white text-sm font-bold shadow-sm hover:shadow-md transition-all duration-300 group mt-4 md:mt-0">
+                <span>{{ 'HOME.REVIEWS_ALL' | translate }}</span>
+                <svg class="h-4 w-4 text-[#19B8D1] group-hover:text-white transform group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</section>
+    <app-testimonials [limit]="3" [columns]="3"></app-testimonials>
+
+
+
+

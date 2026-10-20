@@ -1,0 +1,225 @@
+
+<!-- ================= CTA SECTION ================= -->
+<section class="relative border-b border-white/10 bg-[#2c6c8b] text-[#F8FAFC]">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+
+        <div class="relative overflow-hidden rounded-3xl border border-[#19B8D1]/30
+            bg-gradient-to-r from-[#308fbf] to-[#0E364A] px-8 py-12
+            shadow-2xl md:px-12">
+
+            <!-- Decorative circles -->
+            <div class="absolute -right-16 -top-16 h-40 w-40 rounded-full
+                border border-[#19B8D1]/30 pointer-events-none">
+            </div>
+
+            <div class="absolute -bottom-24 right-20 h-48 w-48 rounded-full
+                border border-[#FFAA2B]/20 pointer-events-none">
+            </div>
+
+            <div class="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+
+                <div class="max-w-2xl">
+
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#19B8D1]">
+                        {{ 'FOOTER.CTA_TITLE1' | translate }}
+                    </p>
+
+                    <h2 class="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+                        {{ 'FOOTER.CTA_TITLE2' | translate }}
+                    </h2>
+
+                    <p class="mt-4 max-w-xl text-base leading-7 text-[#D2E3F3]">
+                        {{ 'FOOTER.CTA_DESC' | translate }}
+                    </p>
+
+                </div>
+
+                <a routerLink="/trips" class="group inline-flex shrink-0 items-center gap-3 rounded-full
+                    bg-[#FFAA2B] px-7 py-4 font-bold text-[#071D2B]
+                    shadow-lg shadow-[#FFAA2B]/20 transition-all duration-300
+                    hover:-translate-y-1 hover:bg-[#ffb943] hover:shadow-xl">
+
+                    {{ 'FOOTER.EXPLORE_TRIPS' | translate }}
+
+                    <svg class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= MAIN FOOTER ================= -->
+<footer class="relative overflow-hidden bg-[#2c6c8b] text-[#F8FAFC]">
+
+    <!-- Decorative background -->
+    <div class="pointer-events-none absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[#19B8D1]/15 blur-3xl"></div>
+    <div class="pointer-events-none absolute -right-20 top-10 h-48 w-48 rounded-full bg-[#FFAA2B]/15 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 pt-12 pb-8 lg:px-8">
+
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+            <!-- ================= BRAND ================= -->
+            <div>
+                <!-- Logo -->
+                <a routerLink="/" class="group inline-flex items-center gap-2.5">
+                    <div
+                        class="flex h-11 w-11 items-center justify-center rounded-xl border border-[#19B8D1]/40 bg-[#14455E] transition duration-300 group-hover:border-[#19B8D1]/70">
+                        <svg class="h-7 w-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="45" cy="16" r="6" fill="#FFAA2B" />
+                            <path d="M7 43L24 22L33 33L40 25L57 43" stroke="#19B8D1" stroke-width="4"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 47C16 42 24 52 32 47C40 42 48 52 57 47" stroke="#19B8D1" stroke-width="3"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black tracking-tight">
+                            H<span class="text-[#19B8D1]">&</span>H
+                        </div>
+                        <p class="-mt-1 text-[9px] font-medium uppercase tracking-[0.2em] text-[#D2E3F3]">
+                            Travel • Explore
+                        </p>
+                    </div>
+                </a>
+
+                <p class="mt-4 text-xs leading-6 text-[#D2E3F3]">
+                    {{ 'FOOTER.MORE' | translate }}
+                </p>
+
+                <!-- Social Media -->
+                <div class="mt-4 flex items-center gap-2.5">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/hh.travel.tourism?obrf=cWtoaXh4cmYzaDB1" aria-label="Instagram"
+                        target="_blank" rel="noopener noreferrer"
+                        class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#D2E3F3] transition hover:-translate-y-0.5 hover:border-[#19B8D1] hover:bg-[#19B8D1]/25 hover:text-[#19B8D1]">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook"
+                        class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#D2E3F3] transition hover:-translate-y-0.5 hover:border-[#19B8D1] hover:bg-[#19B8D1]/25 hover:text-[#19B8D1]">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 8h3V4h-3c-3.314 0-5 1.686-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.667.333-1 1-1Z" />
+                        </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="#" aria-label="TikTok"
+                        class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#D2E3F3] transition hover:-translate-y-0.5 hover:border-[#19B8D1] hover:bg-[#19B8D1]/25 hover:text-[#19B8D1]">
+                        <span class="text-sm font-bold">♪</span>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/+201110497240" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#D2E3F3] transition hover:-translate-y-0.5 hover:border-[#19B8D1] hover:bg-[#19B8D1]/25 hover:text-[#19B8D1]">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ================= SERVICES ================= -->
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-white">
+                    {{ 'FOOTER.SERVICES_TITLE' | translate }}
+                </h3>
+
+                <div class="mt-2 h-0.5 w-6 rounded-full bg-[#19B8D1]"></div>
+
+                <ul class="mt-4 space-y-2.5 text-xs text-[#D2E3F3]">
+                    <li>
+                        <span class="hover:text-white transition cursor-pointer">
+                            {{ 'FOOTER.S_1' | translate }}
+                        </span>
+                    </li>
+                    <li>
+                        <span class="hover:text-white transition cursor-pointer">
+                            {{ 'FOOTER.S_2' | translate }}
+                        </span>
+                    </li>
+                    <li>
+                        <span class="hover:text-white transition cursor-pointer">
+                            {{ 'FOOTER.S_3' | translate }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ================= CONTACT INFO ================= -->
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-white">
+                    {{ 'FOOTER.CONTACT_TITLE' | translate }}
+                </h3>
+
+                <div class="mt-2 h-0.5 w-6 rounded-full bg-[#19B8D1]"></div>
+
+                <div class="mt-4 space-y-3 text-xs">
+                    <!-- Phone -->
+                    <a href="https://wa.me/+201110497240" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2.5 text-[#D2E3F3] transition hover:text-white">
+                        <svg class="h-4 w-4 text-[#19B8D1]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 5a2 2 0 0 1 2-2h2.3a2 2 0 0 1 1.9 1.4L10 7a2 2 0 0 1-.5 2.1L8.2 10.4a16 16 0 0 0 5.4 5.4l1.3-1.3A2 2 0 0 1 17 14l2.6.8a2 2 0 0 1 1.4 1.9V19a2 2 0 0 1-2 2C10.7 21 3 13.3 3 5Z" />
+                        </svg>
+                        <span>{{ 'FOOTER.PHONE' | translate }}</span>
+                    </a>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-2.5 text-[#D2E3F3]">
+                        <svg class="h-4 w-4 text-[#19B8D1]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="2.5" />
+                        </svg>
+                        <span>{{ 'FOOTER.LOCATION' | translate }}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= BOTTOM BAR ================= -->
+    <div class="border-t border-white/15">
+        <div
+            class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-4 text-center text-xs sm:flex-row sm:text-left lg:px-8 text-[#A8C5E0]">
+
+            <p>
+                {{ 'FOOTER.RIGHTS' | translate }}
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a routerLink="/privacy" class="transition hover:text-white">
+                    {{ 'FOOTER.PRIVACY' | translate }}
+                </a>
+
+                <span class="h-3 w-px bg-white/20"></span>
+
+                <a routerLink="/terms" class="transition hover:text-white">
+                    {{ 'FOOTER.TERMS' | translate }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+</footer>

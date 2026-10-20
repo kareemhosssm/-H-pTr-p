@@ -1,0 +1,542 @@
+<!-- ================= 1. HERO SECTION ================= -->
+<section
+    class="relative min-h-[100vh] flex items-center overflow-hidden bg-gradient-to-br from-[#14A0B8] via-[#22D3EE] to-[#0EA5E9]">
+
+    <!-- Background Image with Overlay Gradient -->
+    <div class="absolute inset-0 z-0">
+        <img src="/assets/images/hero about.png" alt="{{ 'ABOUT.HERO_IMAGE_ALT' | translate }}"
+            class="h-full w-full object-cover object-[65%_center] sm:object-center" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#071D2B]/90 via-[#071D2B]/60 to-transparent"></div>
+    </div>
+
+    <!-- Decorative shapes -->
+    <div class="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#7DD3FC]/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#FBBF24]/15 blur-3xl pointer-events-none"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-8">
+        <div class="max-w-2xl">
+
+            <!-- Top Badge -->
+            <div
+                class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-md mb-6 shadow-sm">
+                <span>{{ 'ABOUT.ABOUT_LABEL' | translate }}</span>
+            </div>
+
+            <!-- Main Headings -->
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl leading-[1.1]">
+                {{ 'ABOUT.HERO_TITLE' | translate }}
+            </h1>
+            <p class="mt-3 text-xl font-medium text-[#FFAA2B]">
+                {{ 'ABOUT.HERO_SUBTITLE' | translate }}
+            </p>
+
+            <!-- Description -->
+            <p class="mt-5 text-base sm:text-lg text-gray-100 leading-relaxed">
+                {{ 'ABOUT.HERO_PAGE_DESC' | translate }}
+            </p>
+
+            <!-- CTA Action -->
+            <div class="mt-8">
+                <a routerLink="/trips"
+                    class="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#FFAA2B] px-8 py-4 text-sm font-bold text-[#071D2B] shadow-lg shadow-[#FFAA2B]/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffb943]">
+                    <span>{{ 'ABOUT.EXPLORE_TRIPS' | translate }}</span>
+                    <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div
+        class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#def8ff] pointer-events-none z-20">
+    </div>
+
+</section>
+
+<!-- ================= 2. WHO WE ARE SECTION ================= -->
+<section class="bg-[#def8ff] py-20 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+
+            <!-- Left Text Content -->
+            <div>
+                <span
+                    class="inline-block rounded-full bg-[#19B8D1]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#19B8D1] mb-4">
+                    {{ 'ABOUT.WHO_WE_ARE' | translate }}
+                </span>
+
+                <h2 class="text-3xl font-extrabold text-[#071D2B] sm:text-4xl leading-tight">
+                    {{ 'ABOUT.PARTNER_TITLE' | translate }}
+                </h2>
+
+                <p class="mt-4 text-base text-slate-600 leading-relaxed">
+                    {{ 'ABOUT.WHO_WE_ARE_DESC' | translate }}
+                </p>
+
+                <!-- Stats Row -->
+                <div class="mt-10 grid grid-cols-3 gap-6 border-t border-slate-300/70 pt-8">
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-[#0E7490]">2+</div>
+                        <div class="mt-1 text-xs sm:text-sm font-medium text-slate-600">
+                            {{ 'ABOUT.YEARS_EXPERIENCE' | translate }}
+                        </div>
+                    </div>
+                    <div class="border-x border-slate-300/70 px-4">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-[#0E7490]">5+</div>
+                        <div class="mt-1 text-xs sm:text-sm font-medium text-slate-600">
+                            {{ 'ABOUT.AMAZING_TRIPS' | translate }}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-[#FFAA2B]">500+</div>
+                        <div class="mt-1 text-xs sm:text-sm font-medium text-slate-600">
+                            {{ 'ABOUT.HAPPY_TRAVELERS' | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Polaroid Photo Collage -->
+            <div class="relative flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-lg">
+
+                    <!-- Main Big Image Frame -->
+                    <div
+                        class="relative overflow-hidden rounded-3xl bg-white p-3 shadow-xl rotate-[-2deg] transition duration-300 hover:rotate-0">
+                        <img src="/assets/images/sara-rostenne-oCJcpLj-kNY-unsplash-1.webp"
+                            alt="{{ 'ABOUT.ALT_TRAVEL_LANDSCAPE' | translate }}"
+                            class="h-64 w-full rounded-2xl object-cover" />
+                    </div>
+
+                    <!-- Floating Polaroid Cards (Overlapping) -->
+                    <div
+                        class="absolute -bottom-10 -left-6 sm:-left-12 w-40 sm:w-48 bg-white p-2.5 rounded-2xl shadow-2xl rotate-[6deg] transition duration-300 hover:rotate-0">
+                        <img src="/assets/images/St-Catherine-Mount-Sinai-C.webp"
+                            alt="{{ 'ABOUT.ALT_TRAVEL_MOMENT' | translate }}"
+                            class="h-28 w-full rounded-xl object-cover" />
+                    </div>
+
+                    <div
+                        class="absolute -top-8 -right-4 sm:-right-8 w-36 sm:w-44 bg-white p-2.5 rounded-2xl shadow-2xl rotate-[-8deg] transition duration-300 hover:rotate-0">
+                        <img src="/assets/images/sant.webp" alt="{{ 'ABOUT.ALT_EXPLORE_EGYPT' | translate }}"
+                            class="h-24 w-full rounded-xl object-cover" />
+                    </div>
+
+                    <div
+                        class="absolute bottom-4 -right-6 sm:-right-10 w-36 sm:w-40 bg-white p-2.5 rounded-2xl shadow-2xl rotate-[12deg] transition duration-300 hover:rotate-0">
+                        <img src="/assets/images/dahb.webp" alt="{{ 'ABOUT.ALT_HAPPY_TRAVELERS' | translate }}"
+                            class="h-24 w-full rounded-xl object-cover" />
+                    </div>
+
+                    <!-- Explore More Badge / Arrow graphic -->
+                    <!-- Explore More Link / Button -->
+                    <a routerLink="/gallery"
+                        class="absolute -top-6 right-24 hidden sm:flex items-center gap-1 text-[#071D2B] font-semibold text-sm rotate-[-12deg] transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        <span>{{ 'ABOUT.EXPLORE_MORE' | translate }}</span>
+                        <svg class="h-5 w-5 text-[#FFAA2B] transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= 3. OUR SERVICES SECTION ================= -->
+<section class="bg-[#def8ff] py-20 border-t border-slate-200/60">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="mx-auto max-w-2xl text-center mb-16">
+            <span class="text-sm font-semibold uppercase tracking-[0.25em] text-[#19B8D1]">
+                {{ 'ABOUT.SERVICES_LABEL' | translate }}
+            </span>
+            <h2 class="mt-3 text-3xl font-extrabold text-[#071D2B] sm:text-4xl">
+                {{ 'ABOUT.OFFER_TITLE' | translate }}
+            </h2>
+            <p class="mt-4 text-slate-600">
+                {{ 'ABOUT.SERVICES_DESC' | translate }}
+            </p>
+        </div>
+
+        <!-- Services Grid (4 Cards) -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!-- Service Card 1: Day Tours -->
+            <div
+                class="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between">
+                <div>
+                    <!-- Card Image with Floating Icon Badge -->
+                    <div class="relative overflow-hidden rounded-2xl mb-5">
+                        <img src="/assets/images/hurghda-excursions-tours-luxor-cairo-banner.webp"
+                            alt="{{ 'ABOUT.ALT_DAY_TOURS' | translate }}"
+                            class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div
+                            class="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#071D2B]/80 text-[#19B8D1] backdrop-blur-md shadow-md">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#071D2B]">{{ 'ABOUT.SERVICE_1_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.SERVICE_1_DESC_PAGE' | translate }}
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <a routerLink="/trips"
+                        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7490] transition hover:text-[#071D2B]">
+                        <span>{{ 'ABOUT.LEARN_MORE' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Card 2: Multi-Day Trips -->
+            <div
+                class="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden rounded-2xl mb-5">
+                        <img src="/assets/images/areas-of-trips-and-tourist-thumbnail-294880.webp"
+                            alt="{{ 'ABOUT.ALT_MULTI_DAY_TRIPS' | translate }}"
+                            class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div
+                            class="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#071D2B]/80 text-[#FFAA2B] backdrop-blur-md shadow-md">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#071D2B]">{{ 'ABOUT.SERVICE_2_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.SERVICE_2_DESC' | translate }}
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <a routerLink="/trips"
+                        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7490] transition hover:text-[#071D2B]">
+                        <span>{{ 'ABOUT.LEARN_MORE' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Card 3: Cultural & Historical Tours -->
+            <div
+                class="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden rounded-2xl mb-5">
+                        <img src="/assets/images/clut-hist.webp" alt="{{ 'ABOUT.ALT_CULTURAL_TOURS' | translate }}"
+                            class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div
+                            class="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#071D2B]/80 text-[#19B8D1] backdrop-blur-md shadow-md">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#071D2B]">{{ 'ABOUT.SERVICE_3_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.SERVICE_3_DESC' | translate }}
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <a routerLink="/trips"
+                        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7490] transition hover:text-[#071D2B]">
+                        <span>{{ 'ABOUT.LEARN_MORE' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Card 4: Transportation -->
+            <div
+                class="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden rounded-2xl mb-5">
+                        <img src="/assets/images/bus.webp" alt="{{ 'ABOUT.ALT_TRANSPORTATION' | translate }}"
+                            class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div
+                            class="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#071D2B]/80 text-[#FFAA2B] backdrop-blur-md shadow-md">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#071D2B]">{{ 'ABOUT.SERVICE_4_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.SERVICE_4_DESC' | translate }}
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <a routerLink="/trips"
+                        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7490] transition hover:text-[#071D2B]">
+                        <span>{{ 'ABOUT.LEARN_MORE' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= 4. OUR PAST TRIPS SECTION ================= -->
+<section class="bg-[#def8ff] py-20 relative overflow-hidden">
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+
+            <!-- Left Side: Text & View All Button -->
+            <div>
+                <span
+                    class="inline-block rounded-full bg-[#19B8D1]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#19B8D1] mb-3">
+                    {{ 'ABOUT.PAST_TRIPS_LABEL' | translate }}
+                </span>
+                <h2 class="text-3xl font-extrabold text-[#071D2B] sm:text-4xl leading-tight">
+                    {{ 'ABOUT.PAST_TRIPS_TITLE' | translate }}
+                </h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                    {{ 'ABOUT.PAST_TRIPS_DESC' | translate }}
+                </p>
+
+                <div class="mt-8">
+                    <a routerLink="/gallery"
+                        class="group inline-flex items-center gap-2 rounded-full bg-[#071D2B] px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#0E7490]">
+                        <span>{{ 'ABOUT.VIEW_GALLERY' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Compact Grid (2 Photos & 2 Videos Only) -->
+            <div class="grid grid-cols-2 gap-4">
+
+                <!-- Photo 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-white shadow-md aspect-[4/3] border border-slate-200/60">
+                    <img src="/assets/images/shutterstock_219065986-800x534.webp"
+                        alt="{{ 'ABOUT.ALT_TRIP_MOMENT_1' | translate }}"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+
+                <!-- Photo 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-white shadow-md aspect-[4/3] border border-slate-200/60">
+                    <img src="/assets/images/egypt_cairo_pyramids_of_giza.webp"
+                        alt="{{ 'ABOUT.ALT_TRIP_MOMENT_2' | translate }}"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+
+                <!-- Video 1 (Dahb Trip) -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-white shadow-md aspect-[4/3] border border-slate-200/60">
+
+                    <!-- Video Element -->
+                    <video controls class="h-full w-full object-cover rounded-2xl relative z-10">
+                        <source src="/assets/videos/Dahab4.mp4" type="video/mp4">
+                        {{ 'ABOUT.VIDEO_NOT_SUPPORTED' | translate }}
+                    </video>
+
+                    <div
+                        class="absolute inset-0 bg-black/30 pointer-events-none flex flex-col justify-between p-3.5 z-20">
+
+                        <!-- Top Row: Title on Left & Duration on Right -->
+                        <div class="flex items-center justify-between w-full">
+                            <p
+                                class="text-xs font-bold text-white truncate bg-black/40 px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                                {{ 'ABOUT.DAHAB_TRIP' | translate }}
+                            </p>
+                            <div
+                                class="rounded-full bg-black/60 px-2 py-0.5 text-[10px] text-white font-mono backdrop-blur-sm">
+                                0:35
+                            </div>
+                        </div>
+
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+                <!-- Video 2 (Sharm Trip) -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-white shadow-md aspect-[4/3] border border-slate-200/60">
+
+                    <!-- Video Element -->
+                    <video controls class="h-full w-full object-cover rounded-2xl relative z-10">
+                        <source src="/assets/videos/Sharm3.mp4" type="video/mp4">
+                        {{ 'ABOUT.VIDEO_NOT_SUPPORTED' | translate }}
+                    </video>
+
+                    <!-- Overlay Layout -->
+                    <div
+                        class="absolute inset-0 bg-black/30 pointer-events-none flex flex-col justify-between p-3.5 z-20">
+
+                        <!-- Top Row: Title on Left & Duration on Right -->
+                        <div class="flex items-center justify-between w-full">
+                            <p
+                                class="text-xs font-bold text-white truncate bg-black/40 px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                                {{ 'ABOUT.SHARM_TRIP' | translate }}
+                            </p>
+                            <div
+                                class="rounded-full bg-black/60 px-2 py-0.5 text-[10px] text-white font-mono backdrop-blur-sm">
+                                0:19
+                            </div>
+                        </div>
+
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= 5. WHY CHOOSE Ĥ&Ĥ SECTION ================= -->
+<section class="bg-[#def8ff] py-20 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="grid items-center gap-12 lg:grid-cols-12">
+
+            <!-- Left Side: Title & Description & Button (Col span 5) -->
+            <div class="lg:col-span-5">
+                <span
+                    class="inline-block rounded-full bg-[#19B8D1]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#19B8D1] mb-3">
+                    {{ 'ABOUT.WHY_CHOOSE_LABEL' | translate }}
+                </span>
+                <h2 class="text-3xl font-extrabold text-[#071D2B] sm:text-4xl leading-tight">
+                    {{ 'ABOUT.ADVANTAGE_TITLE' | translate }}
+                </h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                    {{ 'ABOUT.ADVANTAGE_PAGE_DESC' | translate }}
+                </p>
+
+                <div class="mt-8">
+                    <a routerLink="/gallery"
+                        class="group inline-flex items-center gap-2 rounded-full bg-[#071D2B] px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#0E7490]">
+                        <span>{{ 'ABOUT.VIEW_GALLERY' | translate }}</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: 4 Features Grid matching the exact image layout (Col span 7) -->
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+
+                <!-- Feature 1 -->
+                <div
+                    class="flex flex-col items-center sm:items-start text-center sm:text-left rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60">
+                    <div
+                        class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#071D2B] text-white shadow-md">
+                        <svg class="h-5 w-5 text-[#19B8D1]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#071D2B]">{{ 'ABOUT.FEATURE_1_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.FEATURE_1_DESC' | translate }}
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="flex flex-col items-center sm:items-start text-center sm:text-left rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60">
+                    <div
+                        class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#071D2B] text-white shadow-md">
+                        <svg class="h-5 w-5 text-[#FFAA2B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#071D2B]">{{ 'ABOUT.FEATURE_2_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.FEATURE_2_DESC' | translate }}
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="flex flex-col items-center sm:items-start text-center sm:text-left rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60">
+                    <div
+                        class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#071D2B] text-white shadow-md">
+                        <svg class="h-5 w-5 text-[#19B8D1]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#071D2B]">{{ 'ABOUT.FEATURE_3_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.FEATURE_3_DESC' | translate }}
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="flex flex-col items-center sm:items-start text-center sm:text-left rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60">
+                    <div
+                        class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#071D2B] text-white shadow-md">
+                        <svg class="h-5 w-5 text-[#FFAA2B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#071D2B]">{{ 'ABOUT.FEATURE_4_TITLE' | translate }}</h3>
+                    <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+                        {{ 'ABOUT.FEATURE_4_DESC' | translate }}
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= 6. TESTIMONIALS SECTION (What Our Travelers Say) ================= -->
+<app-testimonials></app-testimonials>
