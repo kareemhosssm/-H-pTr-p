@@ -69,7 +69,9 @@ The platform provides an engaging user experience through visually appealing lay
 ### 📍 Trip Details
 
 ![Trip Details](./public/assets/Screenshots/6.png),
-(./public/assets/Screenshots/7.png),(./public/assets/Screenshots/8.png),(./public/assets/Screenshots/9.png)
+![Trip Details](./public/assets/Screenshots/7.png),
+![Trip Details](./public/assets/Screenshots/8.png),
+![Trip Details](./public/assets/Screenshots/9.png)
 
 ### 🖼️ Gallery
 
