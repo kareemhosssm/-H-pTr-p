@@ -76,7 +76,7 @@ The platform provides an engaging user experience through visually appealing lay
 
 ### ℹ️ About
 
-![About Page](./public/assets/Screenshots/3.png)
+![About Page](./)
 
 ### ℹ️ Contact
 
