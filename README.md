@@ -59,7 +59,7 @@ The platform provides an engaging user experience through visually appealing lay
 
 ### 🏠 Home Page
 
-![Home Page](./assets/Screenshots/1.png)
+![Home Page](./public/assets/Screenshots/1.png)
 
 ### 🧭 Trips Page
 
@@ -67,20 +67,20 @@ The platform provides an engaging user experience through visually appealing lay
 
 ### 📍 Trip Details
 
-![Trip Details](./assets/Screenshots/6.png),
-(./assets/Screenshots/7.png),(./assets/Screenshots/8.png),(./assets/Screenshots/9.png)
+![Trip Details](./public/assets/Screenshots/6.png),
+(./public/assets/Screenshots/7.png),(./public/assets/Screenshots/8.png),(./public/assets/Screenshots/9.png)
 
 ### 🖼️ Gallery
 
-![Gallery Page](/assets/Screenshots/5.png)
+![Gallery Page](./public/assets/Screenshots/5.png)
 
 ### ℹ️ About
 
-![About Page](./assets/Screenshots/3.png)
+![About Page](./public/assets/Screenshots/3.png)
 
 ### ℹ️ Contact
 
-![Contact Page](./assets/Screenshots/4.png)
+![Contact Page](./public/assets/Screenshots/4.png)
 ---
 
 ## 🛠️ Technologies Used
