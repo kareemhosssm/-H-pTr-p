@@ -14,20 +14,73 @@ export class Details implements OnInit {
 
   selectedImage: string | null = null;
 
+  imageGallery: string[] = [];
+  currentImageIndex = 0;
+
+  private touchStartX = 0;
+  private readonly swipeThreshold = 50;
+
   constructor(
     private route: ActivatedRoute,
     private translate: TranslateService,
   ) {}
 
-  openImageModal(imgUrl: string) {
-    this.selectedImage = imgUrl;
+  openImageModal(imgUrl: string): void {
+    this.imageGallery = this.trip?.topThumbnails ?? [];
+
+    this.currentImageIndex = this.imageGallery.indexOf(imgUrl);
+
+    if (this.currentImageIndex === -1) {
+      this.imageGallery = [imgUrl];
+      this.currentImageIndex = 0;
+    }
+
+    this.selectedImage = this.imageGallery[this.currentImageIndex];
   }
 
-  closeImageModal() {
+  closeImageModal(): void {
     this.selectedImage = null;
+    this.touchStartX = 0;
   }
 
-  // البيانات الأصلية باللغة الإنجليزية
+  nextImage(): void {
+    if (this.imageGallery.length <= 1) return;
+
+    this.currentImageIndex =
+      (this.currentImageIndex + 1) % this.imageGallery.length;
+
+    this.selectedImage = this.imageGallery[this.currentImageIndex];
+  }
+
+  previousImage(): void {
+    if (this.imageGallery.length <= 1) return;
+
+    this.currentImageIndex =
+      (this.currentImageIndex - 1 + this.imageGallery.length) %
+      this.imageGallery.length;
+
+    this.selectedImage = this.imageGallery[this.currentImageIndex];
+  }
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    const touchEndX = event.changedTouches[0].screenX;
+    const difference = touchEndX - this.touchStartX;
+
+    if (Math.abs(difference) < this.swipeThreshold) return;
+
+    if (difference < 0) {
+      this.nextImage();
+    } else {
+      this.previousImage();
+    }
+
+    this.touchStartX = 0;
+  }
+
   tripsData: { [key: string]: any } = {
     dahab: {
       name: 'Dahab',

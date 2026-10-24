@@ -209,35 +209,47 @@
 
 
 <!-- Video Lightbox -->
-
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 ease-in-out"
-    [style.opacity]="isVideoboxOpen ? '1' : '0'" [style.pointer-events]="isVideoboxOpen ? 'auto' : 'none'">
-
-    <!-- Background Overlay -->
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" (click)="closeVideoModal()"></div>
-
+@if (isVideoboxOpen) {
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-2 sm:p-5 lg:p-8"
+    (click)="closeVideoModal()">
     <!-- Modal Content -->
-    @if (isVideoboxOpen) {
-    <div class="relative w-full max-w-5xl rounded-3xl bg-black shadow-2xl overflow-hidden border border-white/10 z-10">
+    <div class="relative z-10 flex w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#071D2B] shadow-2xl"
+        (click)="$event.stopPropagation()">
+        <!-- Header -->
+        <div class="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6">
+            <h3 class="min-w-0 truncate text-sm font-bold text-white sm:text-lg">
+                {{ currentVideoTitle }}
+            </h3>
 
-        <!-- Close Button -->
-        <button (click)="closeVideoModal()"
-            class="absolute top-4 right-4 z-50 rounded-full bg-white/10 p-2 text-white/70 hover:bg-white/20 hover:text-white transition cursor-pointer">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
+            <div class="flex shrink-0 items-center gap-2">
+                <!-- Fullscreen Button -->
+                <button type="button" (click)="toggleFullscreen()" aria-label="Toggle fullscreen" title="Fullscreen"
+                    class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#14A0B8]">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8 3H5a2 2 0 00-2 2v3m13-5h3a2 2 0 012 2v3M3 16v3a2 2 0 002 2h3m13-5v3a2 2 0 01-2 2h-3" />
+                    </svg>
+                </button>
 
-        <!-- Video Player -->
-        <video [src]="currentVideoUrl" controls autoplay class="w-full h-full aspect-video object-contain"></video>
+                <!-- Close Button -->
+                <button type="button" (click)="closeVideoModal()" aria-label="Close video"
+                    class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rose-600">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-        <!-- Video Title -->
-        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black p-4 pt-10">
-            <h3 class="text-lg font-bold text-white">{{ currentVideoTitle }}</h3>
+        <!-- Large Responsive Video Player -->
+        <div class="flex max-h-[calc(100dvh-100px)] min-h-0 w-full items-center justify-center bg-black">
+            <video [src]="currentVideoUrl" controls autoplay playsinline preload="metadata"
+                class="video-lightbox-player block h-auto max-h-[calc(100dvh-100px)] w-full object-contain"></video>
         </div>
     </div>
-    }
 </div>
+}
+
 
 <!-- ================= 4. PLACES WE'VE EXPLORED (Destinations Grid) ================= -->
 <section class="relative bg-gradient-to-b from-[#def8ff] via-[#def8ff] to-[#2c6c8b] pt-24 pb-32">

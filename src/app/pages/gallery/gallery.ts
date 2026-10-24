@@ -194,17 +194,44 @@ export class Gallery {
     },
   ];
 
-  openVideoModal(videoUrl: string, title: string) {
+  openVideoModal(videoUrl: string, title: string): void {
     this.currentVideoUrl = videoUrl;
     this.currentVideoTitle = title;
     this.isVideoboxOpen = true;
     document.body.style.overflow = 'hidden';
   }
 
-  closeVideoModal() {
+  closeVideoModal(): void {
+    const video = document.querySelector(
+      '.video-lightbox-player',
+    ) as HTMLVideoElement | null;
+
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
+
     this.isVideoboxOpen = false;
     this.currentVideoUrl = null;
     this.currentVideoTitle = null;
     document.body.style.overflow = '';
+  }
+
+  toggleFullscreen(): void {
+    const video = document.querySelector(
+      '.video-lightbox-player',
+    ) as HTMLVideoElement | null;
+
+    if (!video) return;
+
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    } else {
+      video.requestFullscreen?.().catch(() => {});
+    }
   }
 }

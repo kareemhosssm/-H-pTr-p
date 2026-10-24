@@ -48,15 +48,43 @@
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
         (click)="closeImageModal()">
         <div class="relative max-w-4xl w-full bg-[#071D2B] rounded-3xl overflow-hidden p-2 shadow-2xl border border-white/20"
-            (click)="$event.stopPropagation()">
+            (click)="$event.stopPropagation()" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+            <!-- Close Button -->
             <button (click)="closeImageModal()"
                 class="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white font-bold text-lg hover:bg-rose-600 transition">
                 ✕
             </button>
-            <img [src]="selectedImage" class="w-full h-auto max-h-[80vh] object-contain rounded-2xl" />
+    
+            <!-- Previous Image -->
+            @if (imageGallery.length > 1) {
+            <button (click)="previousImage()" aria-label="Previous image"
+                class="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white text-2xl hover:bg-[#14A0B8] transition">
+                &#8249;
+            </button>
+            }
+    
+            <!-- Current Image -->
+            <img [src]="selectedImage" class="w-full h-auto max-h-[80vh] object-contain rounded-2xl" draggable="false" />
+    
+            <!-- Next Image -->
+            @if (imageGallery.length > 1) {
+            <button (click)="nextImage()" aria-label="Next image"
+                class="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white text-2xl hover:bg-[#14A0B8] transition">
+                &#8250;
+            </button>
+            }
+    
+            <!-- Image Counter -->
+            @if (imageGallery.length > 1) {
+            <div
+                class="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-4 py-1.5 text-sm font-semibold text-white">
+                {{ currentImageIndex + 1 }} / {{ imageGallery.length }}
+            </div>
+            }
         </div>
     </div>
     }
+
     <div
         class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#def8ff] pointer-events-none z-20">
     </div>
